@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1602520528 source:e:\c++\cchuoi_1\main.cpp
+	<iostream>
+	<string.h>
+

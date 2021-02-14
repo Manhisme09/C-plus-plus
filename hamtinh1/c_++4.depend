@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1598600331 source:e:\c++\c_++4\main.cpp
+	<iostream>
+	<math.h>
+
+1604971483 source:e:\c++\hamtinh1\main.cpp
+	<iostream>
+	<math.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1604387043 source:e:\c++\struct3\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+

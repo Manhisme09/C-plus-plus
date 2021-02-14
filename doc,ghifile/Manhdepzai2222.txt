@@ -1,0 +1,94 @@
+#include<iostream>
+#include<iomanip>
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+class DiaChi{
+	private:
+		int SoNha;
+		int SoDuong;
+		string TenThanhPho;
+	public:
+		void set1(){
+			cout<<"Nhap so nha:";
+			cin>>this->SoNha;
+			cout<<"Nhap so duong:";
+			cin>>this->SoDuong;
+			cout<<"Nhap ten thanh pho:";
+			cin.ignore();
+			getline(cin,this->TenThanhPho);
+		}
+		void get1(){
+			cout<<setw(20)<<this->SoNha<<setw(20)<<this->SoDuong<<setw(20)<<this->TenThanhPho<<endl;
+		}	
+		int getSoNha(){
+			return this->SoNha;
+		}
+		int getSoDuong(){
+			return this->SoDuong;
+		}
+		string getTenThanhPho(){
+			return this->TenThanhPho;
+		}
+};
+class Student : public DiaChi{
+	private:
+		string masv;
+		string hoten;
+		DiaChi diachi;
+	public:
+		void set(){
+			cout<<"Nhap msv:";
+			getline(cin,this->masv);
+			cout<<"Nhap ho ten:";
+			getline(cin,this->hoten);
+			DiaChi : set1();
+			cout<<endl;
+		}
+		void get(){
+			cout<<setw(20)<<this->masv<<setw(20)<<this->hoten;
+			DiaChi::get1();
+		}	
+		string getHoTen(){
+			return this->hoten;
+		}
+		
+		
+		
+};
+void display(){
+    cout << setw(20) << "MSV" << setw(20) << "Hoten" << setw(20) << "So nha"<< setw(20) << "So Duong" << setw(20) << "Ten Thanh Pho" << endl;
+}
+void sx(Student *arr){
+			for(int i=0;i<1;i++){
+				for(int j=i+1;j<2;j++){
+					if(arr[i].getHoTen()>arr[j].getHoTen()){
+						swap(arr[i],arr[j]);
+					}
+				}
+			}
+			
+		}
+void tim(Student *arr){
+	for(int i=0;i<2;i++)
+	{
+		if(arr[i].getSoNha()<100||arr[i].getSoDuong()>40||arr[i].getTenThanhPho()=="Da Nang")
+		{
+			arr[i].get();
+		}
+	}
+}
+int main(){
+	Student *arr = new Student[100];
+	for(int i=0;i<2;i++){
+		arr[i].set();
+	}
+	sx(arr);
+	display();
+	for(int i=0;i<2;i++){
+		arr[i].get();
+	}
+	tim(arr);
+    return 0;
+}
